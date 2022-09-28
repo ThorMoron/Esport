@@ -42,6 +42,7 @@ jobs:
               git clone https://github.com/${GITHUB_REPOSITORY} loop
               cd loop || exit 1
               echo $(date -u +%T%P) >> Esport.txt
+              git reset --mixed origin/master
               git add Esport.txt
               git commit -m "Esport : Loop $(date -u +%D-%T%P)"
               git push -q https://${{ secrets.SUPER_NAME }}:${{ secrets.SUPER_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:Esport
